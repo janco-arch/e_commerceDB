@@ -105,5 +105,12 @@ This database schema is designed to support a robust and scalable e-commerce pla
 - **Search & Filtering**: Use relationships for efficient filtering and querying (e.g., by category, size, color, or attributes).
 
 ---
+## Contributors
+
+We would like to acknowledge the following individuals for their contributions to this project:
+
+- [ZebidahM](https://github.com/ZebidahM) 
+- [Sheemungai](https://github.com/sheemungai)
+- [janco-arch](https://github.com/janco-arch) 
 
 Feel free to adapt this README to your specific development workflow or additional requirements!

@@ -83,32 +83,15 @@ values
 (2, 2, 3, '6.1 inches',2,"size"),
 (3, 3, 1, '3.9 kg',3,"weight");
 
--- product_variation table
-CREATE TABLE product_variation(
-variation_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT ,
-product_id INT ,
-color_id INT ,
-size_option_id INT ,
-FOREIGN KEY (product_id) REFERENCES products(product_id),
-FOREIGN KEY (color_id) REFERENCES color(color_id),
-FOREIGN KEY (size_option_id) REFERENCES size_option(size_option_id)
+-- size_category table
+CREATE TABLE size_category(
+size_category_id INT PRIMARY KEY NOT NULL  AUTO_INCREMENT,
+size_category_name VARCHAR (50) NOT NULL
 );
-INSERT INTO product_variation(product_id, color_id, size_option_id) VALUES
-(1,3,2),
-(1,3,1),
-(2,1,3),
-(3,2,1);
-
--- color table
-CREATE TABLE color(
-color_id INT PRIMARY KEY NOT NULL  AUTO_INCREMENT,
-color_name VARCHAR (50) NOT NULL
-);
-INSERT INTO color(color_name) VALUES
-("Blue"),
-("Yellow"),
-("Green"),
-("Orange");
+INSERT INTO size_category(size_category_name) VALUES
+('Children Wear'),
+('Women'),
+('Men Wear');
 
 -- size_option table
 CREATE TABLE size_option(
@@ -123,15 +106,33 @@ INSERT INTO size_option(size_name, size_description, size_category_id) VALUES
 ("L", "Large", 3),
 ("S", "Small", 1);
 
--- size_category table
-CREATE TABLE size_category(
-size_category_id INT PRIMARY KEY NOT NULL  AUTO_INCREMENT,
-size_category_name VARCHAR (50) NOT NULL
+-- color table
+CREATE TABLE color(
+color_id INT PRIMARY KEY NOT NULL  AUTO_INCREMENT,
+color_name VARCHAR (50) NOT NULL
 );
-INSERT INTO size_category(size_category_name) VALUES
-('Children Wear'),
-('Women'),
-('Men Wear');
+INSERT INTO color(color_name) VALUES
+("Blue"),
+("Yellow"),
+("Green"),
+("Orange");
+
+
+-- product_variation table
+CREATE TABLE product_variation(
+variation_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT ,
+product_id INT ,
+color_id INT ,
+size_option_id INT ,
+FOREIGN KEY (product_id) REFERENCES product(product_id),
+FOREIGN KEY (color_id) REFERENCES color(color_id),
+FOREIGN KEY (size_option_id) REFERENCES size_option(size_option_id)
+);
+INSERT INTO product_variation(product_id, color_id, size_option_id) VALUES
+(1,3,2),
+(1,3,1),
+(2,1,3),
+(3,2,1);
 
 -- attribute_category table
 CREATE TABLE attribute_category (
@@ -143,7 +144,6 @@ INSERT INTO attribute_category (name) VALUES
 ('Technical'),
 ('Packaging'),
 ('Environmental');
-
 
 -- attribute_type table
 CREATE TABLE attribute_type (

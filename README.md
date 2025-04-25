@@ -4,6 +4,9 @@
 ## Overview
 This database schema is designed to support a robust and scalable e-commerce platform. It organizes product information, variations, categories, attributes, and relationships between them, enabling efficient management and retrieval of data.
 
+## ERD
+![Entity-Relationship Diagram](Ecommerce ERD.drawio.png)
+
 ## Table Structure
 
 ### 1. `brand`

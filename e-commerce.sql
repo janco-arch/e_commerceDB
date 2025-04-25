@@ -133,4 +133,40 @@ INSERT INTO size_category(size_category_name) VALUES
 ('Women'),
 ('Men Wear');
 
+-- attribute_category table
+CREATE TABLE attribute_category (
+    attribute_category_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100)
+);
+INSERT INTO attribute_category (name) VALUES
+('Physical'),
+('Technical'),
+('Packaging'),
+('Environmental');
+
+
+-- attribute_type table
+CREATE TABLE attribute_type (
+    attribute_type_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) -- e.g. text, number, boolean
+);
+INSERT INTO attribute_type (name) VALUES
+('Text'),
+('Number'),
+('Boolean'),
+('Date');
+
+-- product_category table
+CREATE TABLE product_category (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+INSERT INTO product_category (name, description) VALUES
+('Clothing', 'Apparel including shirts, trousers, jackets, etc.'),
+('Electronics', 'Devices such as phones, laptops, and accessories'),
+('Footwear', 'Shoes, sandals, and boots'),
+('Home Appliances', 'Appliances used at home such as fridges and microwaves'),
+('Beauty', 'Cosmetics and personal care products');
+
 
